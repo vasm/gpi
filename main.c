@@ -87,7 +87,7 @@ ISR(ADC_vect)
     ADCSRA |= 1 << ADSC;      // Start Conversion
 }
 
-void main(void)
+int main(void)
 {
     init_adc();
 
@@ -97,5 +97,6 @@ void main(void)
     sei(); // Enable Global Interrupts
     ADCSRA |= 1 << ADSC; // Start Conversion
  
+    
     while (1) {}
 }
